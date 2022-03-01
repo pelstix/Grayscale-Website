@@ -17,4 +17,13 @@
             import os
             print(os.name)
           shell: python
+  run-windows-command:
+        runs-on: windows-latest
+        steps:
+          - name: Directory Powershell
+            run: Get-Location
+          - name: Directory Bash
+            run: pwd
+            shell: bash
+
 
