@@ -3,9 +3,7 @@ name: Actions Workflow
 on: 
   schedule:
    - cron: "* * * * *"
-  pull_request:
-    types: [opened,closed,assigned]
-
+  
 jobs: 
   runs-github-actions:
     runs-on: ubuntu-latest
