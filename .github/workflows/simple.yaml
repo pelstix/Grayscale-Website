@@ -12,4 +12,9 @@
           run: |
             node -v
             npm -v
-            
+        - name: Python commands
+          run: |
+            import os
+            print(os.name)
+          shell: python
+
