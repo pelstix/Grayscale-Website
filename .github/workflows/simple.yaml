@@ -17,7 +17,7 @@
             import os
             print(os.name)
           shell: python
-  run-windows-command:
+   run-windows-command:
         runs-on: windows-latest
         steps:
           - name: Directory Powershell
