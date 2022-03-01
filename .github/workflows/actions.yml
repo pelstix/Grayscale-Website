@@ -1,0 +1,36 @@
+name: Actions Workflow
+
+on: [push]
+
+jobs: 
+  runs-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List all Files Pressent
+        run: |
+          pwd
+          ls -a
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
+          # echo ${{secrets.GITHUB_TOKEN}}
+          # git clone git@github.com:GITHUB_REPOSITORY
+
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: List files after checkout
+        run: |
+           pwd
+           ls -a
+      - name: Simple JS Action
+        id: salute
+        uses: actions/hello-world-javascript-action@v1
+        with:
+          who-to-greet: John
+      - name: Log Greeting Time
+        run: echo "${{steps.salute.outputs.time}}"
+
+       
+
+
+      
